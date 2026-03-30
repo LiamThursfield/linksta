@@ -23,21 +23,31 @@ This is a full-stack monorepo managed with **pnpm workspaces** and powered by **
    pnpm install
    ```
 
-2. Start the development servers:
+2. Setup the Backend
+   - Navigate to the `apps/api` directory.
+   - Copy the `.env.example` file to `.env`:
+     ```bash
+     cd apps/api
+     cp .env.example .env
+     ```
+   - Start the PostgreSQL database using Docker:
+     ```bash
+     docker compose up -d
+     ```
+   - Run database migrations and seeders. You can run them together using the setup script:
+     ```bash
+     pnpm run db:setup
+     ```
+     *(Alternatively, you can run them separately using `pnpm run migrate` and `pnpm run seed`)*
+   - Start the API server:
+     ```bash
+     pnpm dev --port=3000
+     ```
 
-   ```bash
-   vp dev
-   # or
-   pnpm dev
-   ```
-
-3. Type-checking, formatting, and linting:
-
-   ```bash
-   vp check
-   ```
-
-4. Run tests:
-   ```bash
-   vp test
-   ```
+3. Setup the Frontend
+   - Navigate to the `apps/website` directory.
+   - Start the frontend server:
+     ```bash
+     cd apps/website
+     pnpm dev
+     ```
