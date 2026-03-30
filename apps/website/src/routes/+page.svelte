@@ -1,4 +1,7 @@
 <script lang="ts">
+	import SiteHeader from '$lib/components/SiteHeader.svelte';
+	import BackgroundEffects from '$lib/components/BackgroundEffects.svelte';
+	import SiteFooter from '$lib/components/SiteFooter.svelte';
 	// No data needed for basic home page
 </script>
 
@@ -9,29 +12,10 @@
 
 <div class="min-h-screen bg-slate-950 text-slate-50 selection:bg-indigo-500/30 font-['Outfit']">
 	<!-- Background Effects (Same as /handle pages for consistency) -->
-	<div class="fixed inset-0 overflow-hidden pointer-events-none">
-		<div class="absolute -top-[10%] -left-[10%] w-[50%] h-[50%] bg-indigo-600/20 blur-[140px] rounded-full"></div>
-		<div class="absolute top-[30%] -right-[15%] w-[45%] h-[45%] bg-purple-600/15 blur-[140px] rounded-full"></div>
-		<div class="absolute -bottom-[20%] left-[10%] w-[40%] h-[40%] bg-blue-600/10 blur-[140px] rounded-full"></div>
-	</div>
+	<BackgroundEffects variant="home" />
 
 	<!-- Navigation -->
-	<nav class="relative z-20 flex items-center justify-between px-8 py-6 max-w-7xl mx-auto">
-		<div class="flex items-center gap-2 group cursor-pointer">
-			<div class="w-10 h-10 rounded-xl bg-indigo-600 flex items-center justify-center text-white font-black text-sm group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg shadow-indigo-500/20">
-				L
-			</div>
-			<span class="font-bold tracking-tighter text-2xl">linksta</span>
-		</div>
-		<div class="hidden sm:flex items-center gap-8 text-sm font-medium text-slate-400">
-			<a href="/linksta" class="hover:text-slate-100 transition-colors">Demo</a>
-			<a href="#" class="hover:text-slate-100 transition-colors">Pricing</a>
-			<a href="#" class="hover:text-slate-100 transition-colors">Blog</a>
-		</div>
-		<a href="/#" class="px-5 py-2.5 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 rounded-full text-sm font-semibold transition-all">
-			Log in
-		</a>
-	</nav>
+	<SiteHeader />
 
 	<main class="relative z-10 flex flex-col items-center justify-center px-6 pt-24 pb-32 max-w-4xl mx-auto text-center">
 		<!-- Badges -->
@@ -82,19 +66,7 @@
 	</main>
 
 	<!-- Footer -->
-	<footer class="relative z-10 border-t border-white/5 px-8 py-12 max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6 opacity-60">
-		<div class="flex items-center gap-2">
-			<div class="w-6 h-6 rounded-lg bg-indigo-600 flex items-center justify-center text-white font-black text-[10px]">L</div>
-			<span class="font-bold tracking-tighter text-sm">linksta</span>
-		</div>
-		<p class="text-xs text-slate-500">
-			&copy; 2024 Linksta Inc. All rights reserved. Built with Svelte & Vite+.
-		</p>
-		<div class="flex gap-6 text-xs text-slate-500">
-			<a href="#" class="hover:text-slate-300">Privacy</a>
-			<a href="#" class="hover:text-slate-300">Terms</a>
-		</div>
-	</footer>
+	<SiteFooter variant="full" />
 </div>
 
 <style>
