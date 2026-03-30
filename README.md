@@ -51,3 +51,11 @@ This is a full-stack monorepo managed with **pnpm workspaces** and powered by **
      cd apps/website
      pnpm dev
      ```
+
+## Screenshot
+
+### Website - Home Page
+![Website - Home Page](.github/screenshots/website-homepage.png)
+
+### Website - Handle (Show)
+![Website - Handle (Show)](.github/screenshots/website-handle-show.png)
