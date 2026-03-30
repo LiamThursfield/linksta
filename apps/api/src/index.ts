@@ -1,10 +1,15 @@
 import Fastify from "fastify";
+import cors from "@fastify/cors";
 import { db } from "./db/database.js";
 
 console.log("here");
 
 const fastify = Fastify({
   logger: true,
+});
+
+await fastify.register(cors, {
+  origin: "*", // Allow all origins for now
 });
 
 fastify.get("/api/users/:handle/links", async function handler(request, reply) {
